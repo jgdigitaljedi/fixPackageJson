@@ -8,8 +8,7 @@ var fs = require('fs');
 (function main () {
     var results = 'npm: \n "dependencies": { \n',
         errors = 'errors: \n',
-        bowers = 'bower: \n "dependencies": { \n',
-        counter = 0;
+        bowers = 'bower: \n "dependencies": { \n';
     fs.readdir('./node_modules', function (err, dirs) {
         if (err) {
             fs.writeFile('package.txt', err);
@@ -54,7 +53,7 @@ var fs = require('fs');
                             if (index + 1 !== dirs.length) {
                                 bowers += ', \n';
                             } else {
-                                bowers += '} \n \n \n' + errors;
+                                bowers += '\n} \n \n \n';
                             }
                         }
                     });
@@ -62,11 +61,11 @@ var fs = require('fs');
                     var fileSplit = packageJsonFile.split('/'),
                         returnString = '';
                     fileSplit = fileSplit.slice(0, -1);
-                    fileSplit.forEach(function (item, index) {
-                        if (index + 1 === fileSplit.length) {
-                            returnString += item + ', \n';
+                    fileSplit.forEach(function (x, i) {
+                        if (i + 1 === fileSplit.length) {
+                                returnString += x + ', \n';
                         } else {
-                            if (item !== undefined) returnString += item + '/';
+                            if (x !== undefined) returnString += x + '/';
                         }
                     });
                     errors += returnString;
@@ -74,7 +73,8 @@ var fs = require('fs');
             }
         });
         setTimeout(function () {
-            results = results + bowers;
+            errors = errors.replace(/,\s*$/, '');
+            results = results + bowers + errors;
             fs.writeFile('package.txt', results);
         }, 3000);
     });
