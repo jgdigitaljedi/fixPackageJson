@@ -1,6 +1,6 @@
 {
   "name": "list-project-deps",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "module that searches npm and bower modules and attempts to compile and accurate list of what is actually being used",
   "main": "index.js",
   "bin": {
