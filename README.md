@@ -13,7 +13,7 @@ containing list of installed dependencies.
 ## Install
 
 ```bash
-npm -g list-deps
+npm install -g list-deps
 ```
 
 ## Usage
