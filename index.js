@@ -1,10 +1,5 @@
 #!/usr/bin/env node
 
-
-
-// in the root of the project run 'node fixPackageJson.js' and it'll generate package.txt with the correct npm modules and versions
-// adjust timeout for bigger projects if needed. Doing it async was taking too long.
-
 var fs = require('fs');
 
 (function () {
