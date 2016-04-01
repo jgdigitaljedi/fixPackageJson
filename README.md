@@ -9,9 +9,6 @@ npm and bower modules for a project. If your package.json or
 bower.json files become inaccurate you can run this to generate a file
 containing list of installed dependencies.
 
-[![NPM Version][npm-image]][npm-url]
-[![Linux Build][travis-image]][travis-url]
-[![Test Coverage][coveralls-image]][coveralls-url]
 
 ## Install
 
