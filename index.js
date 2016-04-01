@@ -1,17 +1,20 @@
-'use strict';
+#!/usr/bin/env node
+
+
 
 // in the root of the project run 'node fixPackageJson.js' and it'll generate package.txt with the correct npm modules and versions
 // adjust timeout for bigger projects if needed. Doing it async was taking too long.
 
 var fs = require('fs');
 
-(function main () {
+(function () {
     var results = 'npm: \n "dependencies": { \n',
         errors = 'errors: \n',
         bowers = 'bower: \n "dependencies": { \n';
     fs.readdir('./node_modules', function (err, dirs) {
         if (err) {
             fs.writeFile('package.txt', err);
+            console.log('Aborted with error: ', err);
             return;
         }
         dirs.forEach(function (dir, index) {
@@ -38,6 +41,7 @@ var fs = require('fs');
     fs.readdir('./public/lib', function (err, dirs) {
         if (err) {
             fs.writeFile('package.txt', err);
+            console.log('Aborted bower file lookup with error: ', err);
             return;
         }
         dirs.forEach(function (dir, index) {

@@ -1,0 +1,29 @@
+{
+  "name": "list-project-deps",
+  "version": "0.0.1",
+  "description": "module that searches npm and bower modules and attempts to compile and accurate list of what is actually being used",
+  "main": "index.js",
+  "bin": {
+    "list-deps": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": "true",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgdigitaljedi/fixPackageJson.git"
+  },
+  "keywords": [
+    "package.json",
+    "bower.json",
+    "fix",
+    "dependencies"
+  ],
+  "author": "Joey Gauthier <digitaljedi@outlook.com> (http://joeyg.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgdigitaljedi/fixPackageJson/issues"
+  },
+  "homepage": "https://github.com/jgdigitaljedi/fixPackageJson#readme"
+}
